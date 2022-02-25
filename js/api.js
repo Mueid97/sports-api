@@ -10,3 +10,22 @@ const clickedButton = () =>{
 }
 clickedButton();
 
+const displayContries = countries =>{
+    const searchCountry = document.getElementById('search-countries');
+    searchCountry.textContent='';
+    for(const country of countries){
+        console.log(country);
+        const div = document.createElement('div');
+        div.classList.add('col');
+        div.innerHTML=`
+        <div class="card">
+        <img src="${country.strTeamBadge}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">${country.strTeam}</h3>
+              <h5 class="card-title">${country.strCountry}</h5>   
+            </div>
+          </div>
+        `;
+        searchCountry.appendChild(div);
+    }
+}
